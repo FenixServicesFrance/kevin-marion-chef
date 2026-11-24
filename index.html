@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kévin Marion — Chef de cuisine</title>
-<meta name="description" content="Kévin Marion, chef de cuisine à Leucate (Aude), chef de La Cabana del Tio en 2026. Formé au Lycée de l'Arrouza à Lourdes, stagiaire chez Michel Guérard et Jean Coussau, médaille de bronze « Un des Meilleurs Apprentis de France » 2014 en cuisine froide, lauréat 2023 du concours de création d'entreprise Cré'ACC des experts-comptables d'Occitanie.">
+<meta name="description" content="Kévin Marion, chef de cuisine à Leucate (Aude), chef de La Cabana del Tio en 2026. Bac pro cuisine (lycée hôtelier de l'Arrouza, Lourdes), passé chez Michel Guérard (La Bastide Gasconne) et Jean Coussau (Relais de la Poste), médaille de bronze « Un des Meilleurs Apprentis de France » en cuisine froide, lauréat 2023 du concours de création d'entreprise Cré'ACC des experts-comptables d'Occitanie.">
 <meta property="og:title" content="Kévin Marion — Chef de cuisine">
 <meta property="og:description" content="Des Pyrénées à la Méditerranée. Une cuisine de saison, entièrement faite maison.">
 <meta property="og:image" content="images/xl-assiette.jpg">
@@ -81,10 +81,22 @@
 
   /* parcours */
   .postes{list-style:none;margin-top:44px;border-top:1px solid #2a2a2a}
-  .postes li{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #2a2a2a}
+  .postes li{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #2a2a2a}
   .postes .an{font-family:var(--didone);font-weight:700;font-size:20px;color:var(--rose)}
   .postes h3{font-weight:600;font-size:20px;line-height:1.3}
   .postes p{color:#9b968e;font-size:16px;margin-top:2px}
+
+  /* formation */
+  .formation{padding-top:120px;padding-bottom:120px;border-top:1px solid #222}
+  .formation .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:56px}
+  .formation h3{font-family:var(--didone);font-style:italic;font-weight:500;font-size:26px;color:var(--rose);margin-bottom:18px}
+  .formation ul{list-style:none;border-top:1px solid #2a2a2a}
+  .formation li{padding:14px 0;border-bottom:1px solid #2a2a2a}
+  .formation li b{display:block;font-weight:600;font-size:18px;line-height:1.35}
+  .formation li span{display:block;color:#9b968e;font-size:16px;margin-top:2px}
+  @media(max-width:900px){.formation .cols{grid-template-columns:1fr;gap:40px}}
+  @media(min-width:901px){.duo .photo.collant{overflow:visible}.duo .photo.collant img{position:sticky;top:0;inset:auto;height:100vh}}
+  .postes .an{font-size:17px}
 
   /* galerie défilante */
   .galerie{padding-top:110px;padding-bottom:40px}
@@ -123,6 +135,7 @@
   <ul>
     <li><a href="#chef">Le chef</a></li>
     <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#formation">Formation</a></li>
     <li><a href="#assiettes">Assiettes</a></li>
     <li><a href="#monts-et-mers">Monts &amp; Mers</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -149,7 +162,7 @@
 
 <section class="chiffres" aria-label="En bref">
   <div><b>200</b><span>couverts par service en pleine saison</span></div>
-  <div><b>Bronze</b><span>« Un des Meilleurs Apprentis de France » 2014, spécialité cuisine froide</span></div>
+  <div><b>Bronze</b><span>« Un des Meilleurs Apprentis de France », spécialité cuisine froide</span></div>
   <div><b>2023</b><span>Lauréat du concours de création d'entreprise des experts-comptables d'Occitanie</span></div>
 </section>
 
@@ -157,28 +170,62 @@
   <div class="photo"><img src="images/portrait.jpg" alt="Kévin Marion en veste de cuisine" loading="lazy" style="object-position:50% 20%"></div>
   <div class="texte">
     <h2>Le goût<br><em>du concours.</em></h2>
-    <p>Formé au Lycée des métiers de l'Arrouza à Lourdes, Kévin fait ses stages chez deux grands noms de la gastronomie du Sud-Ouest&nbsp;: Michel Guérard à Barbotan-les-Thermes, et la Maison Coussau au Relais de la Poste à Magescq.</p>
-    <p>En 2014, il remporte la médaille de bronze du titre « Un des Meilleurs Apprentis de France » en cuisine froide, décerné par la Société nationale des Meilleurs Ouvriers de France. La même année, il prend la 3<sup>e</sup> place au concours de jeunes cuisiniers des Disciples d'Escoffier.</p>
-    <p>Second de cuisine à La Mangeoire, au Mercure Sensoria de Saint-Lary-Soulan, il y pratique une cuisine semi-gastronomique entièrement faite maison. Depuis, il dirige des cuisines de saison sur le littoral audois et catalan.</p>
-    <p>Dans l'assiette&nbsp;: produits de la mer, légumes de saison, fleurs comestibles, et une vraie pâtisserie de restaurant.</p>
+    <p>Bac pro cuisine au lycée hôtelier de l'Arrouza à Lourdes, Kévin se distingue dès sa formation&nbsp;: médaille de bronze « Un des Meilleurs Apprentis de France » en cuisine froide, et 3<sup>e</sup> place au concours de jeunes cuisiniers des Disciples d'Auguste Escoffier.</p>
+    <p>Il passe par deux grandes maisons du Sud-Ouest&nbsp;: le Relais de la Poste de Jean Coussau à Magescq, puis La Bastide Gasconne de Michel Guérard à Barbotan-les-Thermes, où il revient comme demi-chef de partie en cuisine «&nbsp;santé minceur&nbsp;».</p>
+    <p>Depuis, il enchaîne les saisons entre la montagne et la mer&nbsp;: chef de partie puis second de cuisine à Saint-Lary-Soulan, chef de cuisine sur le littoral audois. Il a aussi co-géré une crêperie à Port-Leucate.</p>
+    <p>Dans l'assiette&nbsp;: poissons frais et crustacés, légumes de saison, fleurs comestibles, et une vraie pâtisserie de restaurant.</p>
   </div>
 </section>
 
 <section id="parcours" class="duo inverse">
-  <div class="photo"><img src="images/xl-poelon.jpg" alt="Légumes en poêlon, tuile noire" loading="lazy"></div>
+  <div class="photo collant"><img src="images/xl-poelon.jpg" alt="Légumes en poêlon, tuile noire" loading="lazy"></div>
   <div class="texte">
     <h2>Des Pyrénées<br><em>à la mer.</em></h2>
     <ol class="postes">
       <li><span class="an">2026</span><div><h3>Chef de cuisine, La Cabana del Tio</h3><p>Leucate Plage.</p></div></li>
       <li><span class="an">2025</span><div><h3>Chef de cuisine, Fish&amp;Blues</h3><p>La Franqui, Leucate. Cuisine de la mer.</p></div></li>
-      <li><span class="an">2024</span><div><h3>Chef de cuisine, Dix Vins Plage</h3><p>Port-Leucate.</p></div></li>
+      <li><span class="an">2020-2024</span><div><h3>Second, puis chef de cuisine, Le Dix Vins Plage</h3><p>Port-Leucate. Création des cartes, postes froids et pâtisserie, 3 commis, poissons frais et crustacés.</p></div></li>
       <li><span class="an">2023</span><div><h3>Pâtisserie, Le Kakou</h3><p>Le Barcarès.</p></div></li>
-      <li><span class="an">2017</span><div><h3>Second de cuisine, La Mangeoire</h3><p>Mercure Sensoria, Saint-Lary-Soulan.</p></div></li>
-      <li><span class="an">2017</span><div><h3>Chef de cuisine, L'Athena</h3><p>Port-Leucate. 150 à 200 couverts.</p></div></li>
-      <li><span class="an">Stage</span><div><h3>Maison Michel Guérard</h3><p>Barbotan-les-Thermes, Gers.</p></div></li>
-      <li><span class="an">Stage</span><div><h3>Relais de la Poste, Maison Coussau</h3><p>Magescq, Landes. Relais &amp; Châteaux.</p></div></li>
-      <li><span class="an">Formation</span><div><h3>Lycée des métiers de l'Arrouza</h3><p>Lourdes, Hautes-Pyrénées.</p></div></li>
+      <li><span class="an">2018-2019</span><div><h3>Co-gérant et responsable cuisine, Crêperie Saint-Michel</h3><p>Port-Leucate. Achats, ratios et marges, HACCP, équipe.</p></div></li>
+      <li><span class="an">2018</span><div><h3>Chef de cuisine en remplacement, L'instant T</h3><p>Ibis Styles, Toulouse.</p></div></li>
+      <li><span class="an">2016-2018</span><div><h3>Chef de partie, puis second de cuisine, La Mangeoire</h3><p>Mercure Sensoria, Saint-Lary-Soulan. Semi-gastronomique, tout fait maison.</p></div></li>
+      <li><span class="an">2017</span><div><h3>Second de cuisine, La Mer à Table</h3><p>Le Barcarès. Poissons et crustacés, pâtisserie.</p></div></li>
+      <li><span class="an">2016</span><div><h3>Demi-chef de partie, La Bastide Gasconne – Michel Guérard</h3><p>Barbotan-les-Thermes. Cuisine gastronomique « santé minceur ».</p></div></li>
+      <li><span class="an">2014-2017</span><div><h3>Commis, second, puis chef de cuisine, L'Athena</h3><p>Port-Leucate. Jusqu'à 200 couverts en pleine saison.</p></div></li>
     </ol>
+  </div>
+</section>
+
+<section id="formation" class="formation pad">
+  <h2>Formation<br><em>&amp; brigades.</em></h2>
+  <div class="cols">
+    <div>
+      <h3>Diplôme et concours</h3>
+      <ul>
+        <li><b>Bac professionnel cuisine</b><span>Lycée hôtelier de l'Arrouza, Lourdes, 2014</span></li>
+        <li><b>Médaille de bronze, Un des Meilleurs Apprentis de France</b><span>Spécialité cuisine froide</span></li>
+        <li><b>3<sup>e</sup> place, concours des Disciples d'Auguste Escoffier</b><span>Concours de jeunes cuisiniers</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Stages</h3>
+      <ul>
+        <li><b>La Bastide Gasconne – Michel Guérard</b><span>Barbotan-les-Thermes, commis, 2015</span></li>
+        <li><b>Relais de la Poste – Jean Coussau</b><span>Magescq, commis, 2014</span></li>
+        <li><b>Hostellerie de Fontanges</b><span>Onet-le-Château, chef de partie, 2013</span></li>
+        <li><b>Vacanciel Herrixka</b><span>Guéthary, commis, 2013</span></li>
+        <li><b>La Pastourelle</b><span>Lourdes, commis, 2012</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Certifications</h3>
+      <ul>
+        <li><b>HACCP</b><span>Hygiène alimentaire, restauration commerciale et collective</span></li>
+        <li><b>SST</b><span>Sauveteur secouriste du travail</span></li>
+        <li><b>Permis d'exploitation</b><span>Débits de boissons, 2023</span></li>
+        <li><b>Construire et conduire un projet entrepreneurial</b><span>BGE Narbonne</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
