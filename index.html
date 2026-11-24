@@ -210,6 +210,13 @@
   .cta h2{font-size:clamp(56px,9vw,150px);line-height:.88}
   .cta .note{color:var(--craie);margin-top:28px}
   .cta .reseaux .btn{font-size:17px;padding:18px 30px}
+
+  /* citation */
+  .citation{padding-top:150px;padding-bottom:150px;text-align:center;border-top:1px solid #222}
+  .citation blockquote p{font-family:var(--didone);font-style:italic;font-weight:500;font-size:clamp(40px,6.4vw,104px);line-height:1.05;letter-spacing:-.02em;max-width:17ch;margin:0 auto}
+  .citation figcaption{margin-top:40px;font-weight:600;font-size:18px;color:var(--rose)}
+  .citation figcaption span{color:#9b968e;font-weight:400}
+  @media(max-width:600px){.citation figcaption span{display:block}}
 </style>
 </head>
 <body>
@@ -371,6 +378,13 @@
   </div>
 </section>
 
+<section class="citation pad" aria-label="Citation">
+  <figure>
+    <blockquote><p>«&nbsp;La bonne cuisine est la base du véritable bonheur.&nbsp;»</p></blockquote>
+    <figcaption>Auguste Escoffier <span>— la devise de Kévin</span></figcaption>
+  </figure>
+</section>
+
 <section id="monts-et-mers" class="projet">
   <img src="images/plat-4.jpg" alt="Assiette colorée, fleurs comestibles" loading="lazy">
   <div class="txt pad">
@@ -406,7 +420,7 @@
 (function(){
   var d=document.documentElement; d.classList.add('js');
   var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var cibles=document.querySelectorAll('h2, .phrase, .intro, .chiffres > div, .postes li, .double li, .formation li, .vis, .duo .photo, .rail figure, .projet p, .projet .prix, .contact .mail, .reseaux');
+  var cibles=document.querySelectorAll('h2, .phrase, .citation blockquote, .citation figcaption, .intro, .chiffres > div, .postes li, .double li, .formation li, .vis, .duo .photo, .rail figure, .projet p, .projet .prix, .contact .mail, .reseaux');
   cibles.forEach(function(el,i){el.classList.add('apparait');});
   if(reduit||!('IntersectionObserver' in window)){cibles.forEach(function(el){el.classList.add('vu');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target.__cible||e.target;t.classList.add('vu');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -12% 0px'});
