@@ -4,254 +4,224 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kévin Marion — Chef de cuisine</title>
-<meta name="description" content="Kévin Marion, chef de cuisine à Leucate (Aude). Bronze Meilleur Apprenti de France, lauréat CREACC 2023. Fish&Blues, Dix Vins Plage, La Mangeoire.">
+<meta name="description" content="Kévin Marion, chef de cuisine à Leucate (Aude). Formé au Lycée de l'Arrouza à Lourdes, bronze Meilleur Apprenti de France, lauréat CREACC 2023.">
 <meta property="og:title" content="Kévin Marion — Chef de cuisine">
-<meta property="og:description" content="Des Pyrénées à la Méditerranée. Cuisine créative, entièrement faite maison.">
+<meta property="og:description" content="Des Pyrénées à la Méditerranée. Une cuisine de saison, entièrement faite maison.">
 <meta property="og:image" content="images/plat-4.jpg">
-<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bodoni.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  @font-face{font-family:'Bricolage Grotesque';src:url(fonts/bricolage.woff2) format('woff2');font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+  @font-face{font-family:'Bodoni Moda';src:url(fonts/bodoni.woff2) format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+  @font-face{font-family:'Bodoni Moda';src:url(fonts/bodoni-italic.woff2) format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
   @font-face{font-family:'Newsreader';src:url(fonts/newsreader.woff2) format('woff2');font-weight:200 800;font-style:normal;font-display:swap}
   @font-face{font-family:'Newsreader';src:url(fonts/newsreader-italic.woff2) format('woff2');font-weight:200 800;font-style:italic;font-display:swap}
+
   :root{
-    --sel:#EDF0EA;        /* blanc des salins */
-    --encre:#1C1B2E;      /* encre de seiche */
-    --salicorne:#55703F;
-    --hibiscus:#C93D72;   /* les fleurs de ses assiettes */
-    --safran:#E7A03A;
-    --gris:#5C5B6B;
-    --display:'Bricolage Grotesque',system-ui,sans-serif;
+    --nappe:#FBFAF6;     /* nappe blanche */
+    --encre:#191817;
+    --ardoise:#2A2B2D;   /* l'ardoise de ses desserts */
+    --bordeaux:#7A1F2E;  /* une réduction de vin rouge */
+    --lin:#E6E1D6;
+    --gris:#6B6760;
+    --didone:'Bodoni Moda',Didot,'Times New Roman',serif;
     --texte:'Newsreader',Georgia,serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-  body{background:var(--sel);color:var(--encre);font-family:var(--texte);font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{background:var(--nappe);color:var(--encre);font-family:var(--texte);font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased}
   img{display:block;max-width:100%}
   a{color:inherit}
-  a:focus-visible{outline:3px solid var(--hibiscus);outline-offset:3px}
-  .w{max-width:1240px;margin:0 auto;padding:0 28px}
+  a:focus-visible{outline:2px solid var(--bordeaux);outline-offset:4px}
 
-  /* en-tête */
-  header.top{position:absolute;inset:0 0 auto 0;z-index:5}
-  header.top .w{display:flex;justify-content:space-between;align-items:center;height:76px;max-width:none;padding:0 max(28px,calc((100vw - 1240px)/2 + 28px))}
-  .mono{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}
-  header.top nav{display:flex;gap:26px;font-family:var(--display);font-size:15px;font-weight:500;background:var(--sel);padding:10px 20px;border-radius:999px}
-  header.top nav a{text-decoration:none}
-  header.top nav a:hover{color:var(--hibiscus)}
-  @media(max-width:760px){header.top nav{display:none}}
+  /* l'intitulé de chaque service, comme sur une carte */
+  .service{font-family:var(--didone);font-style:italic;font-size:22px;color:var(--bordeaux);text-align:center;display:flex;align-items:center;justify-content:center;gap:18px}
+  .service::before,.service::after{content:"";width:48px;height:1px;background:currentColor;opacity:.6}
+  h2{font-family:var(--didone);font-weight:500;font-size:clamp(40px,5.2vw,68px);line-height:1.05;letter-spacing:-.01em;text-align:center;margin:18px auto 0;max-width:18ch}
+  section{padding:130px 24px}
+  .etroit{max-width:760px;margin:0 auto}
 
-  /* hero */
-  .hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr}
-  .hero-txt{display:flex;flex-direction:column;justify-content:flex-end;padding:120px 48px 64px max(28px,calc((100vw - 1240px)/2 + 28px))}
-  .nom{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(84px,13vw,205px);line-height:.82;letter-spacing:-.045em;text-transform:uppercase;padding-top:.12em}
-  .nom span{display:block}
-  .nom span + span{padding-left:.42em}
-  .accroche{font-size:clamp(21px,2vw,25px);line-height:1.45;max-width:30ch;margin-top:40px}
-  .actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
-  .btn{font-family:var(--display);font-weight:600;font-size:16px;text-decoration:none;padding:15px 26px;border-radius:999px;border:2px solid var(--encre);transition:background .2s,color .2s,border-color .2s}
-  .btn.plein{background:var(--encre);color:var(--sel)}
-  .btn.plein:hover{background:var(--hibiscus);border-color:var(--hibiscus)}
-  .btn.vide:hover{background:var(--encre);color:var(--sel)}
-  .hero-img{display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:1fr 1fr;gap:6px;background:var(--encre)}
-  .hero-img img{width:100%;height:100%;object-fit:cover}
-  .hero-img .p{grid-row:1/3;object-position:50% 20%}
-  @media(max-width:900px){
-    .hero{grid-template-columns:1fr;min-height:auto}
-    .hero-txt{padding:110px 24px 48px}
-    .hero-img{height:78vh}
-  }
+  /* couverture */
+  nav.carte-nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:center;gap:34px;padding:30px 24px;font-family:var(--didone);font-style:italic;font-size:17px;z-index:3}
+  nav.carte-nav a{text-decoration:none}
+  nav.carte-nav a:hover{color:var(--bordeaux)}
+  @media(max-width:700px){nav.carte-nav{display:none}}
+  .couverture{position:relative;min-height:100vh;padding:110px 24px 80px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .cadre{position:absolute;inset:16px;border:1px solid var(--encre);pointer-events:none}
+  .cadre::after{content:"";position:absolute;inset:5px;border:1px solid var(--encre);opacity:.35}
+  .couverture .menu-de{font-family:var(--didone);font-style:italic;font-size:22px;color:var(--bordeaux)}
+  .nom{font-family:var(--didone);font-weight:500;font-size:clamp(60px,10vw,150px);line-height:.95;letter-spacing:-.02em;margin-top:10px}
+  .nom i{font-weight:400}
+  .titre{font-size:clamp(18px,1.6vw,21px);letter-spacing:.02em;margin-top:22px;color:var(--gris)}
+  .assiette-une{width:min(440px,74vw);aspect-ratio:1;border-radius:50%;overflow:hidden;margin-top:48px;
+    box-shadow:0 0 0 14px var(--nappe),0 0 0 15px var(--lin),0 40px 70px -20px rgba(25,24,23,.45)}
+  .assiette-une img{width:100%;height:100%;object-fit:cover}
+  .couverture .fleche{margin-top:44px;font-family:var(--didone);font-style:italic;font-size:19px;text-decoration:none;border-bottom:1px solid currentColor}
+  .couverture .fleche:hover{color:var(--bordeaux)}
+  @keyframes pose{from{transform:scale(.92) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
+  .assiette-une{animation:pose 1.2s cubic-bezier(.2,.7,.2,1) .15s both}
 
-  /* trajectoire */
-  .route{background:var(--salicorne);color:var(--sel);padding:26px 0}
-  .route p{font-family:var(--display);font-weight:600;font-stretch:85%;font-size:clamp(19px,2.2vw,28px);letter-spacing:-.01em;display:flex;flex-wrap:wrap;gap:4px 26px;align-items:baseline}
-  .route b{font-weight:800;color:var(--safran)}
+  /* amuse-bouche */
+  .amuse .grille{max-width:980px;margin:72px auto 0;display:grid;grid-template-columns:360px 1fr;gap:72px;align-items:center}
+  .amuse figure img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;border:10px solid #fff;box-shadow:0 1px 0 var(--lin),0 30px 50px -24px rgba(25,24,23,.35)}
+  .amuse figcaption{font-family:var(--didone);font-style:italic;font-size:16px;color:var(--gris);margin-top:14px;text-align:center}
+  .amuse .grille p{max-width:52ch}
+  .amuse .grille p + p{margin-top:20px}
+  .amuse .lettrine::first-letter{font-family:var(--didone);font-size:76px;line-height:.82;float:left;padding:6px 10px 0 0;color:var(--bordeaux)}
+  @media(max-width:860px){.amuse .grille{grid-template-columns:1fr;gap:40px}.amuse figure{max-width:380px;margin:0 auto}}
 
-  section{padding:120px 0}
-  h2{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:clamp(44px,6vw,84px);line-height:.95;letter-spacing:-.035em;margin-bottom:28px}
-  .chapo{font-size:22px;max-width:40ch;color:var(--gris)}
+  /* entrée : distinctions */
+  .entree{background:var(--lin)}
+  .medailles{list-style:none;max-width:980px;margin:64px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:center}
+  .medailles li{padding:8px 10px}
+  .medailles .an{font-family:var(--didone);font-weight:500;font-size:56px;line-height:1}
+  .medailles h3{font-family:var(--didone);font-style:italic;font-weight:500;font-size:24px;line-height:1.25;margin:14px 0 8px;color:var(--bordeaux)}
+  .medailles p{font-size:17px;color:var(--gris)}
+  @media(max-width:760px){.medailles{grid-template-columns:1fr;gap:44px}}
 
-  /* profil */
-  .profil .w{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
-  .profil .texte p{max-width:58ch}
-  .profil .texte p + p{margin-top:20px}
-  .profil .texte strong{font-weight:500;color:var(--hibiscus)}
-  .medailles{margin-top:48px;border-top:2px solid var(--encre)}
-  .medaille{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid rgba(28,27,46,.2)}
-  .medaille .an{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;letter-spacing:-.03em}
-  .medaille h3{font-family:var(--display);font-weight:700;font-size:21px;line-height:1.2}
-  .medaille p{color:var(--gris);font-size:17px;margin-top:4px}
-  @media(max-width:900px){.profil .w{grid-template-columns:1fr;gap:24px}.medaille{grid-template-columns:90px 1fr}.medaille .an{font-size:32px}}
+  /* plat : parcours façon carte */
+  .plats{list-style:none;margin-top:72px}
+  .plats li{text-align:center;padding:0 0 30px}
+  .plats li + li::before{content:"";display:block;width:7px;height:7px;border-radius:50%;background:var(--bordeaux);margin:0 auto 34px;opacity:.75}
+  .plats h3{font-family:var(--didone);font-weight:500;font-size:clamp(26px,3vw,34px);line-height:1.2}
+  .plats .desc{font-style:italic;color:var(--gris);font-size:19px;margin-top:6px}
+  .plats .quand{font-family:var(--didone);font-size:16px;letter-spacing:.06em;margin-top:8px;color:var(--bordeaux)}
 
-  /* la carte = parcours */
-  .carte{background:var(--encre);color:var(--sel)}
-  .carte .w{max-width:880px}
-  .carte h2{text-align:center}
-  .carte .chapo{color:#B9B8C9;text-align:center;margin:0 auto 64px;font-style:italic}
-  .menu{list-style:none;border:1px solid rgba(237,240,234,.28);border-radius:6px;padding:56px 64px;position:relative}
-  .menu::before{content:"";position:absolute;inset:8px;border:1px solid rgba(237,240,234,.12);border-radius:3px;pointer-events:none}
-  .menu li{display:grid;grid-template-columns:2.4ch 1fr auto;gap:0 18px;align-items:baseline;padding:20px 0}
-  .menu li + li{border-top:1px dashed rgba(237,240,234,.2)}
-  .menu .n{font-family:var(--display);font-weight:700;color:var(--safran);font-size:15px;grid-row:1}
-  .menu h3{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.01em;line-height:1.2;grid-column:2;grid-row:1}
-  .menu .date{font-family:var(--display);font-weight:600;font-size:16px;white-space:nowrap;grid-column:3;grid-row:1}
-  .menu .lieu{grid-column:2;color:#B9B8C9;font-style:italic;font-size:18px;margin-top:4px}
-  .menu li.dernier h3{color:#F07AA6}
-  @media(max-width:700px){.menu{padding:32px 22px}.menu li{grid-template-columns:2.4ch 1fr}.menu .date{grid-column:2;grid-row:2;color:var(--safran);margin-top:4px}.menu .lieu{grid-row:3}}
+  /* dessert : les assiettes */
+  .dessert{background:var(--ardoise);color:var(--nappe);padding-bottom:180px}
+  .dessert .service{color:#D9A6AE}
+  .dessert .intro{text-align:center;font-style:italic;color:#BDB8AE;margin-top:16px}
+  .passe{list-style:none;max-width:1140px;margin:80px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:72px 56px}
+  .passe li{text-align:center}
+  .passe .rond{aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 10px #34353A,0 30px 50px -18px rgba(0,0,0,.6)}
+  .passe img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .passe li:hover img{transform:scale(1.06) rotate(4deg)}
+  .passe h3{font-family:var(--didone);font-weight:500;font-size:22px;line-height:1.3;margin-top:32px}
+  .passe p{font-style:italic;color:#BDB8AE;font-size:17px;margin-top:4px}
+  .passe li:nth-child(3n+2){transform:translateY(56px)}
+  @media(max-width:860px){.passe{grid-template-columns:1fr 1fr;gap:48px 28px}.passe li:nth-child(3n+2){transform:none}.passe li:nth-child(2n){transform:translateY(40px)}}
 
-  /* assiettes */
-  .assiettes .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px;flex-wrap:wrap}
-  .assiettes .head h2{margin:0}
-  .mosaique{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:8px;
-    grid-template-areas:"a a a b b b" "a a a b b b" "a a a c c d" "e e f f g g" "e e f f g g"}
-  .mosaique figure{position:relative;overflow:hidden;border-radius:4px;background:var(--encre)}
-  .mosaique img{width:100%;height:100%;object-fit:cover}
-  .mosaique figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;color:var(--sel);font-family:var(--display);font-size:14px;font-weight:500;background:linear-gradient(transparent,rgba(28,27,46,.85))}
-  .ga{grid-area:a}.gb{grid-area:b}.gc{grid-area:c}.gd{grid-area:d}.ge{grid-area:e}.gf{grid-area:f}.gg{grid-area:g}
-  @media(max-width:800px){.mosaique{grid-template-columns:1fr 1fr;grid-auto-rows:180px;grid-template-areas:"a a" "a a" "b b" "c d" "e f" "g g"}}
+  /* mignardises : monts & mers */
+  .projet .grille{max-width:1080px;margin:64px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .projet .grille p{max-width:46ch}
+  .projet .grille p + p{margin-top:18px}
+  .projet .nom-projet{font-family:var(--didone);font-style:italic;font-size:clamp(44px,5vw,64px);line-height:1;color:var(--bordeaux);margin-bottom:24px}
+  .projet img{border:10px solid #fff;box-shadow:0 1px 0 var(--lin),0 30px 50px -24px rgba(25,24,23,.35)}
+  .projet figcaption{font-family:var(--didone);font-style:italic;font-size:16px;color:var(--gris);margin-top:14px}
+  @media(max-width:860px){.projet .grille{grid-template-columns:1fr;gap:40px}}
 
-  /* monts & mers */
-  .projet{background:var(--safran)}
-  .projet .w{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-  .projet h2{font-size:clamp(56px,7.5vw,112px);line-height:.88}
-  .projet h2 span{display:block}
-  .projet p{max-width:46ch;font-size:20px}
-  .projet p + p{margin-top:18px}
-  .projet img{border-radius:4px;box-shadow:14px 14px 0 var(--encre)}
-  .projet figcaption{font-family:var(--display);font-size:14px;margin-top:26px}
-  @media(max-width:900px){.projet .w{grid-template-columns:1fr;gap:40px}}
-
-  /* contact */
-  .contact{padding:140px 0 100px}
-  .contact h2{font-size:clamp(56px,9vw,140px);max-width:12ch}
-  .mail{display:inline-block;font-family:var(--display);font-weight:700;font-size:clamp(24px,4vw,46px);letter-spacing:-.02em;color:var(--hibiscus);text-decoration:none;border-bottom:3px solid currentColor;margin-top:16px;overflow-wrap:anywhere}
+  /* café : contact */
+  .contact{position:relative;text-align:center;padding:150px 24px 140px}
+  .contact .cadre{inset:16px 16px 0}
+  .contact p.sous{font-style:italic;color:var(--gris);margin-top:18px}
+  .mail{display:inline-block;margin-top:40px;font-family:var(--didone);font-size:clamp(26px,4vw,46px);text-decoration:none;color:var(--bordeaux);border-bottom:1px solid currentColor;overflow-wrap:anywhere}
   .mail:hover{color:var(--encre)}
-  .contact .chapo{margin-top:24px}
-  footer{border-top:1px solid rgba(28,27,46,.2);padding:28px 0;font-family:var(--display);font-size:14px;color:var(--gris)}
-  footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-  /* une seule entrée animée : le nom */
-  @keyframes monte{from{transform:translateY(60%);opacity:0}to{transform:none;opacity:1}}
-  .nom span{animation:monte .9s cubic-bezier(.2,.7,.2,1) both}
-  .nom span + span{animation-delay:.12s}
+  .contact .fb{margin-top:26px;font-size:17px}
+  footer{text-align:center;padding:30px 24px 40px;font-family:var(--didone);font-style:italic;font-size:15px;color:var(--gris)}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="w">
-    <a class="mono" href="#">K. Marion</a>
-    <nav aria-label="Sections">
-      <a href="#profil">Profil</a>
-      <a href="#carte">Parcours</a>
-      <a href="#assiettes">Assiettes</a>
-      <a href="#monts-et-mers">Monts &amp; Mers</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<nav class="carte-nav" aria-label="Sections">
+  <a href="#amuse-bouche">Le chef</a>
+  <a href="#entree">Distinctions</a>
+  <a href="#plat">Parcours</a>
+  <a href="#dessert">Assiettes</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <main>
-<section class="hero" style="padding:0">
-  <div class="hero-txt">
-    <h1 class="nom"><span>Kévin</span><span>Marion</span></h1>
-    <p class="accroche">Chef de cuisine. Formé dans les Pyrénées, installé à Leucate, au bord de la Méditerranée.</p>
-    <div class="actions">
-      <a class="btn plein" href="#contact">Contacter Kévin</a>
-      <a class="btn vide" href="#carte">Voir le parcours</a>
-    </div>
-  </div>
-  <div class="hero-img">
-    <img class="p" src="images/portrait.jpg" alt="Kévin Marion en veste de cuisine" width="1120" height="1400">
-    <img src="images/plat-6.jpg" alt="Légumes en poêlon, tuile noire">
-    <img src="images/plat-5.jpg" alt="Macaron fruits rouges">
-  </div>
-</section>
+<header class="couverture">
+  <div class="cadre" aria-hidden="true"></div>
+  <p class="menu-de">Menu dégustation</p>
+  <h1 class="nom">Kévin <i>Marion</i></h1>
+  <p class="titre">Chef de cuisine, de Lourdes à Leucate</p>
+  <div class="assiette-une"><img src="images/plat-5.jpg" alt="Macaron fruits rouges, crème montée mascarpone, coulis citron vert"></div>
+  <a class="fleche" href="#amuse-bouche">Découvrir le menu</a>
+</header>
 
-<div class="route">
-  <div class="w"><p><span>Tarbes</span><span>Saint-Lary-Soulan</span><span>Port-Leucate</span><span>Le Barcarès</span><span>La Franqui</span><b>Bronze MAF</b><b>Lauréat CREACC 2023</b></p></div>
-</div>
-
-<section id="profil" class="profil">
-  <div class="w">
+<section id="amuse-bouche" class="amuse">
+  <p class="service">Amuse-bouche</p>
+  <h2>Une cuisine faite maison, au rythme des saisons</h2>
+  <div class="grille">
+    <figure>
+      <img src="images/portrait.jpg" alt="Kévin Marion en veste de cuisine" width="1120" height="1400">
+      <figcaption>Kévin Marion</figcaption>
+    </figure>
     <div>
-      <h2>Le métier appris en concours.</h2>
-      <p class="chapo">Apprentissage au CFA de Tarbes, puis les brigades de montagne et de bord de mer.</p>
-    </div>
-    <div class="texte">
-      <p>Kévin s'est fait remarquer dès l'apprentissage&nbsp;: <strong>3<sup>e</sup> au concours des Disciples d'Escoffier</strong> en 2014, puis <strong>médaille de bronze au Meilleur Apprenti de France</strong> en 2015.</p>
+      <p class="lettrine">Kévin a appris le métier au Lycée des métiers de l'Arrouza, à Lourdes, et s'est fait remarquer en concours dès sa formation.</p>
       <p>Second de cuisine à La Mangeoire, au Mercure Sensoria de Saint-Lary-Soulan, il y pratique une cuisine semi-gastronomique entièrement faite maison. Il rejoint ensuite le littoral audois et catalan, où il dirige des cuisines de saison jusqu'à 200 couverts.</p>
-      <p>Sa cuisine&nbsp;: produits de la mer, légumes de saison, fleurs comestibles, et une vraie pâtisserie de restaurant.</p>
-
-      <div class="medailles">
-        <div class="medaille"><div class="an">2023</div><div><h3>Lauréat du prix CREACC</h3><p>21<sup>e</sup> édition, Montpellier, pour le projet Monts &amp; Mers.</p></div></div>
-        <div class="medaille"><div class="an">2015</div><div><h3>Bronze, Meilleur Apprenti de France</h3><p>Épreuve du 13 mai 2015, CFA de Tarbes.</p></div></div>
-        <div class="medaille"><div class="an">2014</div><div><h3>3<sup>e</sup>, concours des Disciples d'Escoffier</h3><p>28 novembre 2014.</p></div></div>
-      </div>
+      <p>Dans l'assiette&nbsp;: les produits de la mer, les légumes de saison, les fleurs comestibles, et une vraie pâtisserie de restaurant.</p>
     </div>
   </div>
 </section>
 
-<section id="carte" class="carte">
-  <div class="w">
-    <h2>Le parcours, en sept services</h2>
-    <p class="chapo">Du plus récent au premier.</p>
-    <ol class="menu">
-      <li><span class="n">1</span><h3>Chef, Fish&amp;Blues</h3><span class="date">Saison 2025</span><p class="lieu">La Franqui, Leucate. Cuisine de la mer.</p></li>
-      <li><span class="n">2</span><h3>Chef, Dix Vins Plage</h3><span class="date">Saison 2024</span><p class="lieu">Port-Leucate.</p></li>
-      <li><span class="n">3</span><h3>Pâtisserie, Le Kakou</h3><span class="date">2023</span><p class="lieu">Le Barcarès. Desserts de restaurant.</p></li>
-      <li><span class="n">4</span><h3>Projet Monts &amp; Mers</h3><span class="date">2023</span><p class="lieu">Restaurant éco-responsable, lauréat CREACC.</p></li>
-      <li><span class="n">5</span><h3>Second de cuisine, La Mangeoire</h3><span class="date">2017</span><p class="lieu">Mercure Sensoria, Saint-Lary-Soulan. Semi-gastronomique, tout fait maison.</p></li>
-      <li><span class="n">6</span><h3>Chef, L'Athena</h3><span class="date">Saison 2017</span><p class="lieu">Port-Leucate. 150 à 200 couverts en pleine saison.</p></li>
-      <li class="dernier"><span class="n">7</span><h3>Apprentissage, CFA de Tarbes</h3><span class="date">2014–2015</span><p class="lieu">Ibos, Hautes-Pyrénées. Bronze MAF, 3<sup>e</sup> Disciples d'Escoffier.</p></li>
+<section id="entree" class="entree">
+  <p class="service">Entrée</p>
+  <h2>Les distinctions</h2>
+  <ul class="medailles">
+    <li><div class="an">2023</div><h3>Lauréat du prix CREACC</h3><p>21<sup>e</sup> édition, Montpellier, pour le projet Monts &amp; Mers.</p></li>
+    <li><div class="an">2015</div><h3>Médaille de bronze, Meilleur Apprenti de France</h3><p>Épreuve du 13 mai 2015.</p></li>
+    <li><div class="an">2014</div><h3>3<sup>e</sup> place, concours des Disciples d'Escoffier</h3><p>28 novembre 2014.</p></li>
+  </ul>
+</section>
+
+<section id="plat">
+  <div class="etroit">
+    <p class="service">Plat</p>
+    <h2>Le parcours</h2>
+    <ol class="plats">
+      <li><h3>Chef de cuisine, Fish&amp;Blues</h3><p class="desc">La Franqui, Leucate — cuisine de la mer</p><p class="quand">Saison 2025</p></li>
+      <li><h3>Chef de cuisine, Dix Vins Plage</h3><p class="desc">Port-Leucate</p><p class="quand">Saison 2024</p></li>
+      <li><h3>Pâtisserie, Le Kakou</h3><p class="desc">Le Barcarès — desserts de restaurant</p><p class="quand">2023</p></li>
+      <li><h3>Projet Monts &amp; Mers</h3><p class="desc">Restaurant éco-responsable, lauréat CREACC</p><p class="quand">2023</p></li>
+      <li><h3>Second de cuisine, La Mangeoire</h3><p class="desc">Mercure Sensoria, Saint-Lary-Soulan — semi-gastronomique, tout fait maison</p><p class="quand">2017</p></li>
+      <li><h3>Chef de cuisine, L'Athena</h3><p class="desc">Port-Leucate — 150 à 200 couverts en pleine saison</p><p class="quand">Saison 2017</p></li>
+      <li><h3>Lycée des métiers de l'Arrouza</h3><p class="desc">Lourdes, Hautes-Pyrénées — formation aux métiers de la cuisine</p></li>
     </ol>
   </div>
 </section>
 
-<section id="assiettes" class="assiettes">
-  <div class="w">
-    <div class="head">
-      <h2>Ses assiettes</h2>
-      <p class="chapo">Photographiées en service par Kévin.</p>
-    </div>
-    <div class="mosaique">
-      <figure class="ga"><img src="images/plat-1.jpg" alt="Tarte chocolat et fruits rouges" loading="lazy"><figcaption>Tarte chocolat, fruits rouges</figcaption></figure>
-      <figure class="gb"><img src="images/plat-4.jpg" alt="Assiette de légumes et fleurs comestibles" loading="lazy"><figcaption>Légumes et fleurs de saison</figcaption></figure>
-      <figure class="gc"><img src="images/plat-3.jpg" alt="Huîtres" loading="lazy"><figcaption>Huîtres</figcaption></figure>
-      <figure class="gd"><img src="images/plat-2.jpg" alt="Dessert chocolat, résille de chocolat" loading="lazy"><figcaption>Chocolat, résille</figcaption></figure>
-      <figure class="ge"><img src="images/plat-7.jpg" alt="Gambas et légumes grillés" loading="lazy"><figcaption>Gambas, légumes grillés</figcaption></figure>
-      <figure class="gf"><img src="images/plat-8.jpg" alt="Dessert fruits rouges et crumble" loading="lazy"><figcaption>Fruits rouges, crumble</figcaption></figure>
-      <figure class="gg"><img src="images/plat-9.jpg" alt="Salade de légumes en terrasse face à la mer" loading="lazy"><figcaption>En terrasse, face à la mer</figcaption></figure>
-    </div>
-  </div>
+<section id="dessert" class="dessert">
+  <p class="service">Dessert</p>
+  <h2>Ses assiettes</h2>
+  <p class="intro">Dressées et photographiées en service par Kévin.</p>
+  <ul class="passe">
+    <li><div class="rond"><img src="images/plat-1.jpg" alt="Tarte au chocolat, fruits rouges" loading="lazy"></div><h3>Tarte au chocolat</h3><p>fruits rouges, menthe, agrumes</p></li>
+    <li><div class="rond"><img src="images/plat-4.jpg" alt="Assiette de légumes et fleurs" loading="lazy"></div><h3>Légumes de saison</h3><p>fleurs comestibles</p></li>
+    <li><div class="rond"><img src="images/plat-3.jpg" alt="Huîtres" loading="lazy"></div><h3>Huîtres</h3><p>citron, condiment</p></li>
+    <li><div class="rond"><img src="images/plat-2.jpg" alt="Dessert au chocolat, résille" loading="lazy"></div><h3>Chocolat</h3><p>résille de chocolat, fraise, meringue</p></li>
+    <li><div class="rond"><img src="images/plat-6.jpg" alt="Légumes en poêlon, tuile noire" loading="lazy"></div><h3>Poêlon de légumes</h3><p>tuile noire</p></li>
+    <li><div class="rond"><img src="images/plat-8.jpg" alt="Dessert fruits rouges et crumble" loading="lazy"></div><h3>Fruits rouges</h3><p>crumble, meringue</p></li>
+  </ul>
 </section>
 
 <section id="monts-et-mers" class="projet">
-  <div class="w">
+  <p class="service">Mignardises</p>
+  <h2>Un projet à lui</h2>
+  <div class="grille">
     <div>
-      <h2><span>Monts</span><span>&amp; Mers</span></h2>
-      <p>Le projet de Kévin&nbsp;: un restaurant éco-responsable à Leucate, avec des produits locaux, engagés et uniquement de saison. Le nom résume son parcours, des Pyrénées à la Méditerranée.</p>
-      <p>Il a été récompensé par le prix CREACC le 6 décembre 2023 à Montpellier.</p>
+      <p class="nom-projet">Monts &amp; Mers</p>
+      <p>Un restaurant éco-responsable à Leucate, avec des produits locaux, engagés et uniquement de saison. Le nom résume son parcours, des Pyrénées à la Méditerranée.</p>
+      <p>Le projet a reçu le prix CREACC le 6 décembre 2023 à Montpellier.</p>
     </div>
     <figure>
       <img src="images/creacc.jpg" alt="Remise du prix CREACC 2023 à La Place Créative, Montpellier" loading="lazy">
-      <figcaption>Remise du prix, La Place Créative, Montpellier, décembre 2023.</figcaption>
+      <figcaption>Remise du prix, La Place Créative, Montpellier, décembre 2023</figcaption>
     </figure>
   </div>
 </section>
 
 <section id="contact" class="contact">
-  <div class="w">
-    <h2>Une brigade à monter&nbsp;?</h2>
-    <a class="mail" href="mailto:kevin.marion6@gmail.com">kevin.marion6@gmail.com</a>
-    <p class="chapo">Basé à Leucate. Son travail au quotidien sur <a href="https://www.facebook.com/chef.kevin.marion/" target="_blank" rel="noopener">Facebook</a>.</p>
-  </div>
+  <div class="cadre" aria-hidden="true"></div>
+  <p class="service">Café</p>
+  <h2>Une brigade à monter, une saison à préparer&nbsp;?</h2>
+  <p class="sous">Kévin est basé à Leucate.</p>
+  <a class="mail" href="mailto:kevin.marion6@gmail.com">kevin.marion6@gmail.com</a>
+  <p class="fb">Son travail au quotidien sur <a href="https://www.facebook.com/chef.kevin.marion/" target="_blank" rel="noopener">Facebook</a></p>
 </section>
 </main>
 
-<footer>
-  <div class="w"><span>© 2026 Kévin Marion</span><span>Site réalisé par Fenix Services</span></div>
-</footer>
+<footer>© 2026 Kévin Marion — site réalisé par Fenix Services</footer>
 
 </body>
 </html>
