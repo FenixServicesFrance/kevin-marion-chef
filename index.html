@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kévin Marion — Chef de cuisine</title>
-<meta name="description" content="Kévin Marion, chef de cuisine à Leucate (Aude). Formé au Lycée de l'Arrouza à Lourdes, bronze Meilleur Apprenti de France, lauréat CREACC 2023.">
+<meta name="description" content="Kévin Marion, chef de cuisine à Leucate (Aude), chef de La Cabana del Tio en 2026. Formé au Lycée de l'Arrouza à Lourdes, bronze Meilleur Apprenti de France, lauréat CREACC 2023.">
 <meta property="og:title" content="Kévin Marion — Chef de cuisine">
 <meta property="og:description" content="Des Pyrénées à la Méditerranée. Une cuisine de saison, entièrement faite maison.">
-<meta property="og:image" content="images/xl-tarte.jpg">
+<meta property="og:image" content="images/xl-assiette.jpg">
 <link rel="preload" href="fonts/bodoni.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="images/xl-tarte.jpg" as="image">
+<link rel="preload" href="images/xl-assiette.jpg" as="image">
 <style>
   @font-face{font-family:'Bodoni Moda';src:url(fonts/bodoni.woff2) format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
   @font-face{font-family:'Bodoni Moda';src:url(fonts/bodoni-italic.woff2) format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
@@ -41,9 +41,9 @@
 
   /* hero plein écran */
   .hero{position:relative;height:100svh;min-height:620px;overflow:hidden;display:flex;align-items:flex-end}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;animation:zoom 14s ease-out both}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;animation:zoom 14s ease-out both}
   @keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
-  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,transparent 30%,transparent 45%,rgba(0,0,0,.85) 100%)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 28%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.88) 100%),linear-gradient(90deg,rgba(0,0,0,.45),transparent 60%)}
   .hero .txt{position:relative;z-index:2;width:100%;padding-bottom:48px}
   .nom{font-family:var(--didone);font-weight:900;font-size:clamp(76px,15.5vw,250px);line-height:.8;letter-spacing:-.035em;text-transform:uppercase}
   .nom span{display:block}
@@ -123,7 +123,7 @@
 
 <main>
 <header class="hero">
-  <img src="images/xl-tarte.jpg" alt="Tarte au chocolat, fruits rouges, signée Kévin Marion" fetchpriority="high">
+  <img src="images/xl-assiette.jpg" alt="Assiette de légumes de saison, en terrasse face à la mer" fetchpriority="high">
   <div class="txt pad">
     <h1 class="nom"><span>Kévin</span><span>Marion</span></h1>
     <div class="bas">
@@ -154,6 +154,7 @@
   <div class="texte">
     <h2>Des Pyrénées<br><em>à la mer.</em></h2>
     <ol class="postes">
+      <li><span class="an">2026</span><div><h3>Chef de cuisine, La Cabana del Tio</h3><p>Leucate Plage.</p></div></li>
       <li><span class="an">2025</span><div><h3>Chef de cuisine, Fish&amp;Blues</h3><p>La Franqui, Leucate. Cuisine de la mer.</p></div></li>
       <li><span class="an">2024</span><div><h3>Chef de cuisine, Dix Vins Plage</h3><p>Port-Leucate.</p></div></li>
       <li><span class="an">2023</span><div><h3>Pâtisserie, Le Kakou</h3><p>Le Barcarès.</p></div></li>
@@ -171,7 +172,6 @@
   </div>
   <div class="rail" tabindex="0" aria-label="Galerie de plats, défilement horizontal">
     <figure><img src="images/xl-fruits.jpg" alt="Fruits rouges, crumble, meringue" loading="lazy"><figcaption><span>Fruits rouges</span><span>crumble, meringue</span></figcaption></figure>
-    <figure><img src="images/plat-4.jpg" alt="Légumes de saison et fleurs" loading="lazy"><figcaption><span>Légumes de saison</span><span>fleurs comestibles</span></figcaption></figure>
     <figure><img src="images/xl-crevettes.jpg" alt="Gambas et légumes grillés" loading="lazy"><figcaption><span>Gambas</span><span>légumes grillés</span></figcaption></figure>
     <figure><img src="images/xl-mousse.jpg" alt="Mousse au chocolat, résille" loading="lazy"><figcaption><span>Chocolat</span><span>résille, fraise</span></figcaption></figure>
     <figure><img src="images/plat-3.jpg" alt="Huîtres" loading="lazy"><figcaption><span>Huîtres</span><span>citron, condiment</span></figcaption></figure>
@@ -181,7 +181,7 @@
 </section>
 
 <section id="monts-et-mers" class="projet">
-  <img src="images/plat-9.jpg" alt="Assiette de légumes en terrasse, face à la mer" loading="lazy">
+  <img src="images/plat-4.jpg" alt="Assiette colorée, fleurs comestibles" loading="lazy">
   <div class="txt pad">
     <h2>Monts<br><em>&amp; Mers.</em></h2>
     <p>Son projet&nbsp;: un restaurant éco-responsable à Leucate, avec des produits locaux, engagés et uniquement de saison.</p>
