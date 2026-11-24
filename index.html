@@ -86,6 +86,21 @@
   .postes h3{font-weight:600;font-size:20px;line-height:1.3}
   .postes p{color:#9b968e;font-size:16px;margin-top:2px}
 
+  /* double casquette */
+  .double{padding-top:130px;padding-bottom:130px;border-top:1px solid #222}
+  .double h2{font-size:clamp(46px,6.4vw,104px);max-width:16ch}
+  .double .intro{font-size:clamp(19px,1.7vw,23px);color:var(--craie);max-width:52ch;margin-top:30px}
+  .double .cols{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:72px;border-top:1px solid #333}
+  .double .cols > div{padding:44px 48px 10px 0}
+  .double .cols > div + div{padding-left:48px;border-left:1px solid #333}
+  .double h3{font-family:var(--didone);font-weight:800;font-size:clamp(36px,4vw,58px);line-height:1;letter-spacing:-.02em;margin-bottom:28px}
+  .double .cols > div + div h3{font-style:italic;font-weight:500;color:var(--rose)}
+  .double ul{list-style:none}
+  .double li{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid #222}
+  .double li b{font-weight:700;font-size:18px}
+  .double li span{color:var(--craie)}
+  @media(max-width:900px){.double .cols{grid-template-columns:1fr}.double .cols > div,.double .cols > div + div{padding:36px 0 0;border-left:0}.double li{grid-template-columns:1fr;gap:2px}}
+
   /* formation */
   .formation{padding-top:120px;padding-bottom:120px;border-top:1px solid #222}
   .formation .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:56px}
@@ -135,6 +150,7 @@
   <a class="sig" href="#">KM</a>
   <ul>
     <li><a href="#chef">Le chef</a></li>
+    <li><a href="#double">Cuisine &amp; gestion</a></li>
     <li><a href="#parcours">Parcours</a></li>
     <li><a href="#formation">Formation</a></li>
     <li><a href="#assiettes">Assiettes</a></li>
@@ -155,7 +171,7 @@
   <div class="txt pad">
     <h1 class="nom"><span>Kévin</span><span>Marion</span></h1>
     <div class="bas">
-      <p>Chef de cuisine. Formé à Lourdes, installé à Leucate, au bord de la Méditerranée.</p>
+      <p>Chef de cuisine créatif, avec la rigueur d'un chef d'entreprise. Formé à Lourdes, installé à Leucate.</p>
       <a class="btn" href="#contact">Contacter Kévin</a>
     </div>
   </div>
@@ -175,6 +191,31 @@
     <p>Il passe par deux grandes maisons du Sud-Ouest&nbsp;: le Relais de la Poste de Jean Coussau à Magescq, puis La Bastide Gasconne de Michel Guérard à Barbotan-les-Thermes, où il revient comme demi-chef de partie en cuisine «&nbsp;santé minceur&nbsp;».</p>
     <p>Depuis, il enchaîne les saisons entre la montagne et la mer&nbsp;: chef de partie puis second de cuisine à Saint-Lary-Soulan, chef de cuisine sur le littoral audois. Il a aussi co-géré une crêperie à Port-Leucate.</p>
     <p>Dans l'assiette&nbsp;: poissons frais et crustacés, légumes de saison, fleurs comestibles, et une vraie pâtisserie de restaurant.</p>
+  </div>
+</section>
+
+<section id="double" class="double pad">
+  <h2>Un cuisinier créatif.<br><em>Un chef d'entreprise.</em></h2>
+  <p class="intro">Ses assiettes font revenir les clients. Ses chiffres font tenir la maison. Kévin a dirigé des cuisines, co-géré un établissement et monté son propre projet de restaurant.</p>
+  <div class="cols">
+    <div>
+      <h3>En cuisine</h3>
+      <ul>
+        <li><b>Créer</b><span>Cartes et menus de saison, plats signatures, cuisine entièrement faite maison.</span></li>
+        <li><b>Dresser</b><span>Poissons frais et crustacés, légumes de saison, fleurs comestibles, pâtisserie de restaurant.</span></li>
+        <li><b>Recevoir</b><span>Cuisine ouverte, buffets thématiques animés face à la clientèle, relation directe avec les clients.</span></li>
+        <li><b>S'adapter</b><span>Du semi-gastronomique d'hôtel à la cuisine « santé minceur » de Michel Guérard, jusqu'à 200 couverts par service.</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>En gestion</h3>
+      <ul>
+        <li><b>Rentabilité</b><span>Calcul des ratios et des marges, négociation des achats et des tarifs fournisseurs.</span></li>
+        <li><b>Équipes</b><span>Recrutement, formation et management de commis et de seconds de cuisine.</span></li>
+        <li><b>Organisation</b><span>Gestion des stocks, mise en place de saison, dossier HACCP.</span></li>
+        <li><b>Entreprise</b><span>Co-gérant d'une crêperie à Port-Leucate, certifié « Construire et conduire un projet entrepreneurial » (BGE), lauréat Cré'ACC 2023.</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
