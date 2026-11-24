@@ -41,8 +41,14 @@
 
   /* hero plein écran */
   .hero{position:relative;height:100svh;min-height:620px;overflow:hidden;display:flex;align-items:flex-end}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;animation:zoom 14s ease-out both}
-  @keyframes zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+  .hero .defile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:fondu 30s linear infinite}
+  .hero .defile img:nth-child(1){animation-delay:0s;object-position:50% 62%}
+  .hero .defile img:nth-child(2){animation-delay:6s}
+  .hero .defile img:nth-child(3){animation-delay:12s}
+  .hero .defile img:nth-child(4){animation-delay:18s}
+  .hero .defile img:nth-child(5){animation-delay:24s}
+  @keyframes fondu{0%{opacity:0;transform:scale(1.12)}4%{opacity:1}20%{opacity:1}26%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+  @media (prefers-reduced-motion:reduce){.hero .defile img:first-child{opacity:1}}
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.4) 0%,transparent 28%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.88) 100%),linear-gradient(90deg,rgba(0,0,0,.45),transparent 60%)}
   .hero .txt{position:relative;z-index:2;width:100%;padding-bottom:48px}
   .nom{font-family:var(--didone);font-weight:900;font-size:clamp(76px,15.5vw,250px);line-height:.8;letter-spacing:-.035em;text-transform:uppercase}
@@ -125,7 +131,13 @@
 
 <main>
 <header class="hero">
-  <img src="images/xl-assiette.jpg" alt="Assiette de légumes de saison, en terrasse face à la mer" fetchpriority="high">
+  <div class="defile" aria-hidden="true">
+    <img src="images/xl-assiette.jpg" alt="" fetchpriority="high">
+    <img src="images/xl-crevettes.jpg" alt="" loading="lazy">
+    <img src="images/plat-3.jpg" alt="" loading="lazy">
+    <img src="images/xl-poelon.jpg" alt="" loading="lazy">
+    <img src="images/xl-fruits.jpg" alt="" loading="lazy">
+  </div>
   <div class="txt pad">
     <h1 class="nom"><span>Kévin</span><span>Marion</span></h1>
     <div class="bas">
@@ -145,7 +157,7 @@
   <div class="photo"><img src="images/portrait.jpg" alt="Kévin Marion en veste de cuisine" loading="lazy" style="object-position:50% 20%"></div>
   <div class="texte">
     <h2>Le goût<br><em>du concours.</em></h2>
-    <p>Formé au Lycée des métiers de l'Arrouza à Lourdes, Kévin fait ses stages chez deux grands noms de la gastronomie landaise&nbsp;: Michel Guérard aux Prés d'Eugénie, et la Maison Coussau au Relais de la Poste.</p>
+    <p>Formé au Lycée des métiers de l'Arrouza à Lourdes, Kévin fait ses stages chez deux grands noms de la gastronomie du Sud-Ouest&nbsp;: Michel Guérard à Barbotan-les-Thermes, et la Maison Coussau au Relais de la Poste à Magescq.</p>
     <p>En 2014, il remporte la médaille de bronze du titre « Un des Meilleurs Apprentis de France » en cuisine froide, décerné par la Société nationale des Meilleurs Ouvriers de France. La même année, il prend la 3<sup>e</sup> place au concours de jeunes cuisiniers des Disciples d'Escoffier.</p>
     <p>Second de cuisine à La Mangeoire, au Mercure Sensoria de Saint-Lary-Soulan, il y pratique une cuisine semi-gastronomique entièrement faite maison. Depuis, il dirige des cuisines de saison sur le littoral audois et catalan.</p>
     <p>Dans l'assiette&nbsp;: produits de la mer, légumes de saison, fleurs comestibles, et une vraie pâtisserie de restaurant.</p>
@@ -163,7 +175,7 @@
       <li><span class="an">2023</span><div><h3>Pâtisserie, Le Kakou</h3><p>Le Barcarès.</p></div></li>
       <li><span class="an">2017</span><div><h3>Second de cuisine, La Mangeoire</h3><p>Mercure Sensoria, Saint-Lary-Soulan.</p></div></li>
       <li><span class="an">2017</span><div><h3>Chef de cuisine, L'Athena</h3><p>Port-Leucate. 150 à 200 couverts.</p></div></li>
-      <li><span class="an">Stage</span><div><h3>Les Prés d'Eugénie, Michel Guérard</h3><p>Eugénie-les-Bains, Landes. Relais &amp; Châteaux.</p></div></li>
+      <li><span class="an">Stage</span><div><h3>Maison Michel Guérard</h3><p>Barbotan-les-Thermes, Gers.</p></div></li>
       <li><span class="an">Stage</span><div><h3>Relais de la Poste, Maison Coussau</h3><p>Magescq, Landes. Relais &amp; Châteaux.</p></div></li>
       <li><span class="an">Formation</span><div><h3>Lycée des métiers de l'Arrouza</h3><p>Lourdes, Hautes-Pyrénées.</p></div></li>
     </ol>
