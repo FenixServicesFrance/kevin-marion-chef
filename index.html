@@ -142,6 +142,43 @@
   .mail.tel{display:table;margin-top:18px}
   .contact p{color:var(--craie);margin-top:30px}
   footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;padding-bottom:30px;border-top:1px solid #222;color:#8a857d;font-size:14px}
+
+  /* boutons avec icône */
+  .btn{display:inline-flex;align-items:center;gap:10px}
+  .btn svg,.appel svg{width:18px;height:18px;fill:currentColor;flex:none}
+  .btn.vide{background:transparent;color:var(--blanc);box-shadow:inset 0 0 0 1.5px var(--blanc)}
+  .btn.vide:hover{background:var(--blanc);color:var(--noir)}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .reseaux{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
+  .appel{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:10px;background:var(--rose);color:var(--blanc);text-decoration:none;font-weight:700;padding:16px 22px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.45);transition:transform .25s}
+  .js .appel{opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .4s,transform .4s}
+  .js .appel.montre{opacity:1;transform:none;pointer-events:auto}
+  .js .appel.montre:hover{transform:translateY(-3px)}
+  .appel svg{width:20px;height:20px}
+  .appel::before{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(242,85,138,.6);animation:onde 2.4s ease-out infinite}
+  @keyframes onde{to{box-shadow:0 0 0 16px rgba(242,85,138,0)}}
+  @media(max-width:600px){.appel span{display:none}.appel{padding:18px}}
+
+  /* bandeau défilant */
+  .bandeau{overflow:hidden;padding:8px 0;display:grid;gap:8px;background:#000}
+  .piste{display:flex;gap:8px;width:max-content;animation:file 60s linear infinite}
+  .piste.inverse{animation-direction:reverse;animation-duration:70s}
+  .piste img{height:clamp(150px,18vw,240px);aspect-ratio:1;object-fit:cover;border-radius:4px}
+  .bandeau:hover .piste{animation-play-state:paused}
+  @keyframes file{to{transform:translateX(-50%)}}
+
+  /* visuels section double */
+  .double .vis{margin:0 0 34px;overflow:hidden;border-radius:4px}
+  .double .vis img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  .double .vis:hover img{transform:scale(1.05)}
+
+  /* transitions au défilement */
+  .js .apparait{opacity:0;transform:translateY(42px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js .duo .photo.apparait,.js .vis.apparait{opacity:1;transform:none;clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.7,0,.2,1)}
+  .js .apparait.vu{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+  .js .duo .photo.apparait.vu,.js .vis.apparait.vu{clip-path:inset(0 0 0 0)}
+  .projet > img{will-change:transform;transform:scale(1.2)}
+  @media (prefers-reduced-motion:reduce){.piste{animation:none}.appel::before{animation:none}}
 </style>
 </head>
 <body>
@@ -172,16 +209,22 @@
     <h1 class="nom"><span>Kévin</span><span>Marion</span></h1>
     <div class="bas">
       <p>Chef de cuisine créatif, avec la rigueur d'un chef d'entreprise. Formé à Lourdes, installé à Leucate.</p>
-      <a class="btn" href="#contact">Contacter Kévin</a>
+      <div class="ctas"><a class="btn" href="tel:+33673126738"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Appeler Kévin</a><a class="btn vide" href="mailto:kevin.marion6@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.5l8 5.5 8-5.5V7h-.4z"/></svg>Lui écrire</a></div>
     </div>
   </div>
 </header>
 
 <section class="chiffres" aria-label="En bref">
-  <div><b>200</b><span>couverts par service en pleine saison</span></div>
+  <div><b data-compte="200">200</b><span>couverts par service en pleine saison</span></div>
   <div><b>Bronze</b><span>« Un des Meilleurs Apprentis de France », spécialité cuisine froide</span></div>
   <div><b>2023</b><span>Lauréat du concours de création d'entreprise des experts-comptables d'Occitanie</span></div>
 </section>
+
+
+<div class="bandeau" aria-hidden="true">
+  <div class="piste"><img src="images/m-tartare.jpg" alt="" loading="lazy"><img src="images/m-burrata.jpg" alt="" loading="lazy"><img src="images/m-moules.jpg" alt="" loading="lazy"><img src="images/m-dessert-bleu.jpg" alt="" loading="lazy"><img src="images/m-asperges.jpg" alt="" loading="lazy"><img src="images/m-macaron2.jpg" alt="" loading="lazy"><img src="images/m-tartare.jpg" alt="" loading="lazy"><img src="images/m-burrata.jpg" alt="" loading="lazy"><img src="images/m-moules.jpg" alt="" loading="lazy"><img src="images/m-dessert-bleu.jpg" alt="" loading="lazy"><img src="images/m-asperges.jpg" alt="" loading="lazy"><img src="images/m-macaron2.jpg" alt="" loading="lazy"></div>
+  <div class="piste inverse"><img src="images/m-gambas2.jpg" alt="" loading="lazy"><img src="images/m-panna.jpg" alt="" loading="lazy"><img src="images/m-cocktail.jpg" alt="" loading="lazy"><img src="images/m-agrumes.jpg" alt="" loading="lazy"><img src="images/m-ecrase.jpg" alt="" loading="lazy"><img src="images/m-dessert-terrasse.jpg" alt="" loading="lazy"><img src="images/m-gambas2.jpg" alt="" loading="lazy"><img src="images/m-panna.jpg" alt="" loading="lazy"><img src="images/m-cocktail.jpg" alt="" loading="lazy"><img src="images/m-agrumes.jpg" alt="" loading="lazy"><img src="images/m-ecrase.jpg" alt="" loading="lazy"><img src="images/m-dessert-terrasse.jpg" alt="" loading="lazy"></div>
+</div>
 
 <section id="chef" class="duo">
   <div class="photo"><img src="images/portrait.jpg" alt="Kévin Marion en veste de cuisine" loading="lazy" style="object-position:50% 20%"></div>
@@ -199,6 +242,7 @@
   <p class="intro">Ses assiettes font revenir les clients. Ses chiffres font tenir la maison. Kévin a dirigé des cuisines, co-géré un établissement et monté son propre projet de restaurant.</p>
   <div class="cols">
     <div>
+      <figure class="vis"><img src="images/cuisine-1.jpg" alt="Dressage en cuisine" loading="lazy"></figure>
       <h3>En cuisine</h3>
       <ul>
         <li><b>Créer</b><span>Cartes et menus de saison, plats signatures, cuisine entièrement faite maison.</span></li>
@@ -208,6 +252,7 @@
       </ul>
     </div>
     <div>
+      <figure class="vis"><img src="images/creacc.jpg" alt="Remise du prix Cré'ACC 2023 à Montpellier" loading="lazy"></figure>
       <h3>En gestion</h3>
       <ul>
         <li><b>Rentabilité</b><span>Calcul des ratios et des marges, négociation des achats et des tarifs fournisseurs.</span></li>
@@ -283,6 +328,11 @@
     <figure><img src="images/plat-3.jpg" alt="Huîtres" loading="lazy"><figcaption><span>Huîtres</span><span>citron, condiment</span></figcaption></figure>
     <figure><img src="images/plat-5.jpg" alt="Macaron fruits rouges" loading="lazy"><figcaption><span>Macaron</span><span>fruits rouges, mascarpone</span></figcaption></figure>
     <figure><img src="images/xl-tarte2.jpg" alt="Tarte au chocolat, fruits frais" loading="lazy"><figcaption><span>Tarte au chocolat</span><span>fruits frais</span></figcaption></figure>
+    <figure><img src="images/m-burrata.jpg" alt="Burrata, tomates anciennes, basilic" loading="lazy"><figcaption><span>Burrata</span><span>tomates anciennes, basilic</span></figcaption></figure>
+    <figure><img src="images/m-tartare.jpg" alt="Tartare, pickles d'oignon rouge, tuile noire" loading="lazy"><figcaption><span>Tartare</span><span>pickles d'oignon rouge, tuile noire</span></figcaption></figure>
+    <figure><img src="images/m-asperges.jpg" alt="Sur le pouce, salade, sauce maison" loading="lazy"><figcaption><span>Sur le pouce</span><span>salade, sauce maison</span></figcaption></figure>
+    <figure><img src="images/m-macaron2.jpg" alt="Macaron, fraises, coulis" loading="lazy"><figcaption><span>Macaron</span><span>fraises, coulis</span></figcaption></figure>
+    <figure><img src="images/m-agrumes.jpg" alt="Agrumes, crémeux, perles" loading="lazy"><figcaption><span>Agrumes</span><span>crémeux, perles</span></figcaption></figure>
   </div>
 </section>
 
@@ -300,11 +350,44 @@
   <h2>Une brigade<br><em>à monter&nbsp;?</em></h2>
   <a class="mail" href="mailto:kevin.marion6@gmail.com">kevin.marion6@gmail.com</a>
   <a class="mail tel" href="tel:+33673126738">06 73 12 67 38</a>
-  <p>Basé à Leucate. Son travail au quotidien sur <a href="https://www.facebook.com/chef.kevin.marion/" target="_blank" rel="noopener">Facebook</a>.</p>
+  <div class="reseaux">
+    <a class="btn" href="tel:+33673126738"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Appeler</a>
+    <a class="btn vide" href="mailto:kevin.marion6@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.5l8 5.5 8-5.5V7h-.4z"/></svg>Écrire</a>
+    <a class="btn vide" href="https://www.facebook.com/chef.kevin.marion/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.25-1.5 1.5-1.5h1.6V4.4A21 21 0 0 0 14.3 4.3c-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg>Facebook</a>
+  </div>
+  <p>Basé à Leucate. Ses assiettes au quotidien sur sa page Facebook.</p>
 </section>
 </main>
 
-<footer class="pad"><span>© 2026 Kévin Marion</span><span>Site réalisé par Fenix Services</span></footer>
+<footer class="pad"><span>© 2026 Kévin Marion · <a href="https://www.facebook.com/chef.kevin.marion/" target="_blank" rel="noopener">Facebook</a></span><span>Site réalisé par Fenix Services</span></footer>
+
+<a class="appel" href="tel:+33673126738" aria-label="Appeler Kévin Marion au 06 73 12 67 38"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Appeler</span></a>
+
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js');
+  var reduit=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cibles=document.querySelectorAll('h2, .intro, .chiffres > div, .postes li, .double li, .formation li, .vis, .duo .photo, .rail figure, .projet p, .projet .prix, .contact .mail, .reseaux');
+  cibles.forEach(function(el,i){el.classList.add('apparait');});
+  if(reduit||!('IntersectionObserver' in window)){cibles.forEach(function(el){el.classList.add('vu');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target.__cible||e.target;t.classList.add('vu');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -12% 0px'});
+  cibles.forEach(function(el){
+    var freres=el.parentElement?Array.prototype.indexOf.call(el.parentElement.children,el):0;
+    el.style.transitionDelay=Math.min(freres,6)*70+'ms';
+    var clip=el.matches('.photo, .vis');
+    if(clip){var o=el.parentElement;o.__cible=el;io.observe(o);}else io.observe(el);
+  });
+  /* compteur */
+  var c=document.querySelector('[data-compte]');
+  if(c){var fin=+c.dataset.compte,ok=false;new IntersectionObserver(function(es,o){if(es[0].isIntersecting&&!ok){ok=true;o.disconnect();var t0=null;function pas(t){if(!t0)t0=t;var k=Math.min((t-t0)/1400,1);c.textContent=Math.round(fin*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(pas);}requestAnimationFrame(pas);}},{threshold:.6}).observe(c);}
+  /* bouton d'appel flottant : après le haut de page */
+  var ap=document.querySelector('.appel'),hero=document.querySelector('.hero');
+  new IntersectionObserver(function(es){ap.classList.toggle('montre',!es[0].isIntersecting);},{threshold:.15}).observe(hero);
+  /* parallaxe */
+  var px=document.querySelectorAll('.projet > img');
+  window.addEventListener('scroll',function(){px.forEach(function(im){var r=im.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){im.style.transform='translateY('+(r.top*-.18)+'px) scale(1.2)';}});},{passive:true});
+})();
+</script>
 
 </body>
 </html>
