@@ -207,8 +207,17 @@
 
   /* citation */
   .citation{padding-top:150px;padding-bottom:150px;text-align:center;border-top:1px solid #222}
-  .citation blockquote p{font-family:var(--didone);font-style:italic;font-weight:500;font-size:clamp(40px,6.4vw,104px);line-height:1.05;letter-spacing:-.02em;max-width:17ch;margin:0 auto}
-  .citation figcaption{margin-top:40px;font-weight:600;font-size:18px;color:var(--rose)}
+  .citation .cit{display:flex;align-items:center;justify-content:center;gap:clamp(28px,5vw,72px);max-width:1000px;margin:0 auto;text-align:left}
+  .citation blockquote p{font-family:var(--didone);font-style:italic;font-weight:500;font-size:clamp(30px,3.8vw,56px);line-height:1.12;letter-spacing:-.015em;max-width:18ch}
+  .citation figcaption{margin-top:26px;font-weight:600;font-size:16px;color:var(--rose)}
+  .esquisse{flex:none;width:clamp(150px,20vw,240px);color:var(--craie)}
+  .esquisse path{stroke-dasharray:1;stroke-dashoffset:0}
+  .js .esquisse.apparait path{stroke-dashoffset:1;transition:stroke-dashoffset 2.6s cubic-bezier(.4,0,.2,1)}
+  .js .esquisse.apparait circle{opacity:0;transition:opacity .6s 2s}
+  .js .esquisse.apparait.vu path{stroke-dashoffset:0}
+  .js .esquisse.apparait.vu circle{opacity:1}
+  .js .esquisse.apparait{opacity:1;transform:none}
+  @media(max-width:700px){.citation .cit{flex-direction:column;text-align:center}.citation blockquote p{margin:0 auto}}
   .citation figcaption span{color:#9b968e;font-weight:400}
   @media(max-width:600px){.citation figcaption span{display:block}}
 
@@ -428,9 +437,35 @@
 <section class="citation pad" aria-label="Citation">
   <img class="rond g" src="images/m-macaron2.jpg" alt="" aria-hidden="true" loading="lazy">
   <img class="rond d" src="images/m-dessert-bleu.jpg" alt="" aria-hidden="true" loading="lazy">
-  <figure>
-    <blockquote><p>«&nbsp;La bonne cuisine est la base du véritable bonheur.&nbsp;»</p></blockquote>
-    <figcaption>Auguste Escoffier <span>— la devise de Kévin</span></figcaption>
+  <figure class="cit">
+    <svg class="esquisse" viewBox="0 0 200 270" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path pathLength="1" d="M62 74C38 72 34 44 58 38C60 16 94 10 104 28C118 10 152 20 146 42C168 46 164 74 140 74"/>
+        <path pathLength="1" d="M80 40C84 52 82 62 78 72M104 30C104 48 106 60 104 74M126 36C124 50 126 62 122 74"/>
+        <path pathLength="1" d="M60 74L62 102H140L142 74Z"/>
+        <path pathLength="1" d="M66 88C90 92 112 92 136 88"/>
+        <path pathLength="1" d="M70 102C66 140 76 172 101 180C126 172 136 140 132 102"/>
+        <path pathLength="1" d="M68 122C62 120 60 132 66 138M134 122C140 120 142 132 136 138"/>
+        <path pathLength="1" d="M82 120C86 116 92 116 95 119M107 119C110 116 116 116 120 120"/>
+        <path pathLength="1" d="M87 127a2 2 0 1 0 4 0a2 2 0 1 0 -4 0M110 127a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+        <path pathLength="1" d="M101 126L97 146C100 149 104 149 106 146"/>
+        <path pathLength="1" d="M101 154C94 149 86 149 80 153C75 156 72 156 70 152C69 149 71 147 73 148"/>
+        <path pathLength="1" d="M101 154C108 149 116 149 122 153C127 156 130 156 132 152C133 149 131 147 129 148"/>
+        <path pathLength="1" d="M95 166C99 167 103 167 107 166"/>
+        <path pathLength="1" d="M88 178L86 194M114 178L116 194"/>
+        <path pathLength="1" d="M86 194L101 214L116 194"/>
+        <path pathLength="1" d="M94 204L101 222L108 204"/>
+        <path pathLength="1" d="M36 266C40 222 64 202 86 194M116 194C138 202 162 222 166 266"/>
+        <path pathLength="1" d="M101 222V266"/>
+        <path pathLength="1" d="M58 232C62 246 62 256 60 266M144 232C140 246 140 256 142 266"/>
+        
+      </g>
+      <g fill="currentColor"><circle cx="90" cy="236" r="2.4"/><circle cx="90" cy="254" r="2.4"/><circle cx="112" cy="236" r="2.4"/><circle cx="112" cy="254" r="2.4"/></g>
+    </svg>
+    <div>
+      <blockquote><p>«&nbsp;La bonne cuisine est la base du véritable bonheur.&nbsp;»</p></blockquote>
+      <figcaption>Auguste Escoffier <span>— la devise de Kévin</span></figcaption>
+    </div>
   </figure>
 </section>
 
