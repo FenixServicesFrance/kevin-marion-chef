@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://kevin-marion-chef.pages.dev/">
 <meta property="og:site_name" content="Kévin Marion, chef de cuisine">
 <meta property="og:title" content="Kévin Marion — Chef de cuisine créatif à Leucate">
-<meta property="og:description" content="Passé par Michel Guérard et Jean Coussau, médaillé Meilleur Apprenti de France. Une cuisine de saison faite maison, et la rigueur d'un chef d'entreprise.">
+<meta property="og:description" content="Passé par Michel Guérard et Jean Coussau, médaillé Meilleur Apprenti de France. Créatif en cuisine, rigoureux en gestion, il porte Monts &amp; Mers, son projet de restaurant primé.">
 <meta property="og:image" content="https://kevin-marion-chef.pages.dev/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -211,6 +211,16 @@
   .citation figcaption{margin-top:40px;font-weight:600;font-size:18px;color:var(--rose)}
   .citation figcaption span{color:#9b968e;font-weight:400}
   @media(max-width:600px){.citation figcaption span{display:block}}
+
+  .projet .appel-projet{margin-top:28px;font-size:clamp(18px,1.5vw,21px);max-width:46ch}
+  .projet .appel-projet a{color:var(--blanc);font-weight:700;text-decoration-color:var(--rose);text-decoration-thickness:2px;text-underline-offset:4px}
+  .pistes{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:48px 0 36px;max-width:1100px;border-top:1px solid rgba(255,255,255,.25)}
+  .pistes li{padding:22px 28px 22px 0}
+  .pistes li + li{padding-left:28px;border-left:1px solid rgba(255,255,255,.25)}
+  .pistes b{display:block;font-family:var(--didone);font-style:italic;font-weight:500;font-size:clamp(28px,2.6vw,38px);color:var(--rose);line-height:1.1}
+  .pistes span{display:block;color:var(--craie);margin-top:10px;font-size:17px}
+  @media(max-width:860px){.pistes{grid-template-columns:1fr}.pistes li,.pistes li + li{padding:18px 0;border-left:0;border-bottom:1px solid rgba(255,255,255,.2)}}
+  .cta::before{background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.75) 60%,rgba(0,0,0,.45) 100%)}
 </style>
 </head>
 <body>
@@ -382,14 +392,20 @@
     <p>Son projet&nbsp;: un restaurant éco-responsable à Leucate, avec des produits locaux, engagés et uniquement de saison.</p>
     <p class="explique">Le projet a été primé le 6 décembre 2023 à Montpellier au <strong>Cré'ACC</strong> («&nbsp;Créez, accompagné&nbsp;»), le concours de création d'entreprise organisé par l'Ordre des experts-comptables d'Occitanie avec Initiative Occitanie, Réseau Entreprendre, France Active et la CCI Occitanie.</p>
     <span class="prix">Lauréat Cré'ACC 2023 · 21<sup>e</sup> édition</span>
+    <p class="appel-projet">Le projet est prêt, primé et pensé dans le détail. Il lui manque aujourd'hui des partenaires pour voir le jour&nbsp;: <a href="#contact">associé, investisseur ou mécène</a>.</p>
   </div>
 </section>
 
 <section id="contact" class="cta">
   <img src="images/m-dessert-terrasse.jpg" alt="" loading="lazy">
   <div class="cta-txt pad">
-    <p class="sur">Une saison, une ouverture, une nouvelle carte</p>
-    <h2>Votre brigade<br><em>cherche un chef&nbsp;?</em></h2>
+    <p class="sur">Challenge, coopération, investissement</p>
+    <h2>Écrivons<br><em>la suite ensemble.</em></h2>
+    <ul class="pistes">
+      <li><b>Un challenge</b><span>Une ouverture, une reprise, une carte à réinventer&nbsp;: un projet qui demande un chef qui crée et qui gère.</span></li>
+      <li><b>Une coopération</b><span>S'associer, co-gérer, monter une affaire à deux&nbsp;: Kévin l'a déjà fait, cuisine et chiffres compris.</span></li>
+      <li><b>Un mécène</b><span>Investir dans Monts &amp; Mers, son restaurant éco-responsable primé, et l'aider à ouvrir ses portes.</span></li>
+    </ul>
     <a class="mail" href="mailto:kevin.marion6@gmail.com">kevin.marion6@gmail.com</a>
     <a class="mail tel" href="tel:+33673126738">06 73 12 67 38</a>
     <div class="reseaux">
@@ -397,7 +413,7 @@
     <a class="btn vide" href="mailto:kevin.marion6@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.5l8 5.5 8-5.5V7h-.4z"/></svg>Écrire</a>
     <a class="btn vide" href="https://www.facebook.com/chef.kevin.marion/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.25-1.5 1.5-1.5h1.6V4.4A21 21 0 0 0 14.3 4.3c-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg>Facebook</a>
   </div>
-    <p class="note">Basé à Leucate. Disponible pour échanger, réponse rapide par téléphone.</p>
+    <p class="note">Basé à Leucate. Un appel suffit pour en parler.</p>
   </div>
 </section>
 </main>
