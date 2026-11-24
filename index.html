@@ -47,7 +47,10 @@
   .pad{padding-left:max(24px,4vw);padding-right:max(24px,4vw)}
 
   /* nav */
-  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:22px;mix-blend-mode:difference}
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0));transition:background .35s,padding .35s,box-shadow .35s;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+  nav.solide{background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);padding-top:14px;padding-bottom:14px;box-shadow:0 1px 0 rgba(255,255,255,.08);text-shadow:none}
+  nav ul a{opacity:.85;transition:opacity .2s,color .2s}
+  nav ul a:hover{opacity:1;color:var(--rose)}
   nav .sig{font-family:var(--didone);font-weight:800;font-size:22px;text-decoration:none}
   nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
   nav ul a{text-decoration:none}
@@ -540,6 +543,10 @@
   /* bouton d'appel flottant : après le haut de page */
   var ap=document.querySelector('.appel'),hero=document.querySelector('.hero');
   new IntersectionObserver(function(es){ap.classList.toggle('montre',!es[0].isIntersecting);},{threshold:.15}).observe(hero);
+  /* barre de navigation : fond plein dès qu'on défile */
+  var nv=document.querySelector('nav');
+  function nav(){nv.classList.toggle('solide',window.scrollY>40);}
+  nav(); window.addEventListener('scroll',nav,{passive:true});
   /* parallaxe */
   var px=document.querySelectorAll('.projet > img, .cta > img');
   window.addEventListener('scroll',function(){px.forEach(function(im){var r=im.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){im.style.transform='translateY('+(r.top*-.18)+'px) scale(1.2)';}});},{passive:true});
