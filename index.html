@@ -267,12 +267,6 @@
 
   .citation{position:relative;overflow:hidden}
   .citation figure{position:relative;z-index:1}
-  .citation .rond{position:absolute;width:clamp(180px,24vw,360px);aspect-ratio:1;object-fit:cover;border-radius:50%;opacity:.55;animation:tourne 60s linear infinite}
-  .citation .rond.g{left:-7%;top:12%}
-  .citation .rond.d{right:-7%;bottom:8%;animation-direction:reverse}
-  @keyframes tourne{to{transform:rotate(360deg)}}
-  @media(max-width:700px){.citation .rond{opacity:.3;width:160px}.citation .rond.g{left:-60px;top:20px}.citation .rond.d{right:-60px;bottom:20px}}
-  @media (prefers-reduced-motion:reduce){.citation .rond{animation:none}}
 </style>
 </head>
 <body>
@@ -450,8 +444,6 @@
 </section>
 
 <section class="citation pad" aria-label="Citation">
-  <img class="rond g" src="images/m-macaron2.jpg" alt="" aria-hidden="true" loading="lazy">
-  <img class="rond d" src="images/m-dessert-bleu.jpg" alt="" aria-hidden="true" loading="lazy">
   <figure class="cit">
     <figure class="portrait-escoffier"><img src="images/escoffier.jpg" alt="Auguste Escoffier" loading="lazy"></figure>
     <div>
